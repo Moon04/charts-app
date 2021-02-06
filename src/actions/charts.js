@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { showLoading, hideLoading } from "react-redux-loading";
 import { saveChart, getAllCharts } from "../utils/api";
 
@@ -25,6 +26,18 @@ export function handleFetchCharts() {
             .then((res) => {
               dispatch(hideLoading());
               dispatch(fetchCharts([...res.data]));
+            })
+            .catch((error)=>{
+              dispatch(hideLoading());
+                if (error.response && error.response.status === 500) {
+                    toast.error("Something wrong happened, please try again.");
+                } 
+                else if (error.request) {
+                  toast.error("Internet Connection Error! Try Again Later.");
+                } 
+                else {
+                  toast.error(error.message);
+                }
             });
   };
 }
@@ -36,6 +49,18 @@ export function handleAddChart(chartData) {
       ...chartData,
     })
       .then((res) => dispatch(addChart(res.data)))
-      .then(() => dispatch(hideLoading()));
+      .then(() => dispatch(hideLoading()))
+      .catch((error)=>{
+        dispatch(hideLoading());
+        if (error.response && error.response.status === 500) {
+          toast.error("Something wrong happened, please try again.");
+        } 
+        else if (error.request) {
+          toast.error("Internet Connection Error! Try Again Later.");
+        } 
+        else {
+          toast.error(error.message);
+        }
+      });
   };
 }
