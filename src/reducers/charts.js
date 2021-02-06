@@ -1,0 +1,18 @@
+import { FETCH_CHARTS, ADD_CHART } from "../actions/charts";
+
+export default function charts(state = {}, action) {
+  switch (action.type) {
+    case FETCH_CHARTS:
+      return {
+        ...state,
+        ...action.charts,
+      };
+    case ADD_CHART:
+      return {
+        ...state,
+        [action.chart.id]: action.chart,
+      };
+    default:
+      return state;
+  }
+}

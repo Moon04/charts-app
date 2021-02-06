@@ -14,17 +14,17 @@ class App extends Component {
 
   render(){
     return (
-      <Router basename='/projects/redux-twitter'>
-      <Fragment>
-        {/* <LoadingBar /> */}
-        <div className='app-container'>
-          {this.props.loading === true? null
-            : <div>
-                <Route path='/' exact component={InternalDashboard} />
-                <Route path='/add-chart' component={NewChartForm} />
-              </div>}
-        </div>
-      </Fragment>
+      <Router>
+        <Fragment>
+          {/* <LoadingBar /> */}
+          <div className='app-container bg-light'>
+            {this.props.loading === true? null
+              : <div>
+                  <Route path='/' exact component={InternalDashboard} />
+                  <Route path='/add-chart' component={NewChartForm} />
+                </div>}
+          </div>
+        </Fragment>
       </Router>
     );
   }
