@@ -2,10 +2,14 @@ import React from 'react';
 import Nav from './Nav';
 import ChartsList from './ChartsList';
 
-const InternalDashboard = ()=>{
+const InternalDashboard = ({history})=>{
+    const handleAddChartBtn = ()=>{
+        history.push("/add-chart");
+    };
+
     return(
         <>
-            <Nav/>
+            <Nav handleAddChartBtn={handleAddChartBtn}/>
             <ChartsList/>
         </>
     );

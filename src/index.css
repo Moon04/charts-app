@@ -1,19 +1,33 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#submit-btn,
+#add-chart-btn,
+#add-chart-btn:hover {
+  background-color: rgb(41, 20, 201);
 }
 
+.new-chart-form-container{
+  height: 90vh;
+}
 
-#add-chart-btn, 
-#add-chart-btn:hover{
-  background-color: rgb(41,20,201);
+#new-chart-form {
+  background-color: #fff;
+  padding: 10%;
+  border-radius: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.alert-danger {
+  position: fixed;
+  width: max-content;
+  top: 90%;
+  color: rgb(243, 247, 253);
+  background-color: #df2a2a;
+  border-radius: 8px;
+  border-color: #df2a2a;
+  z-index: 100;
 }
