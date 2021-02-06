@@ -3,7 +3,7 @@ import Chart from './Chart';
 
 const ChartsList = ()=>{
     return(
-        <div className="container">
+        <div className="row">
             <Chart/>
             <Chart/>
             <Chart/>
