@@ -31,3 +31,7 @@ body {
   border-color: #df2a2a;
   z-index: 100;
 }
+
+.Toastify__toast-container{
+  width: max-content;
+}
