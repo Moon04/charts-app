@@ -1,9 +1,10 @@
 import { toast } from 'react-toastify';
 import { showLoading, hideLoading } from "react-redux-loading";
+
+import { FETCH_CHARTS, ADD_CHART } from './types';
 import { saveChart, getAllCharts } from "../utils/api";
 
-export const FETCH_CHARTS = "FETCH_CHARTS";
-export const ADD_CHART = "ADD_CHART";
+
 
 function fetchCharts(charts) {
   return {

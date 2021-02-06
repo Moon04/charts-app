@@ -1,4 +1,4 @@
-import { FETCH_CHARTS, ADD_CHART } from "../actions/charts";
+import { FETCH_CHARTS, ADD_CHART } from "../actions/types";
 
 export default function charts(state = [], action) {
   switch (action.type) {
