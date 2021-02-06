@@ -19,7 +19,11 @@ const ChartsList = ({ charts }) => {
 };
 
 ChartsList.protoTypes = {
-  charts: PropTypes.array
+  charts: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    data: PropTypes.array
+  }))
 };
 
 function mapStateToProps({ charts }) {

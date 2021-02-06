@@ -67,7 +67,11 @@ const Chart = ({ chart }) => {
 };
 
 Chart.protoTypes = {
-  chart: PropTypes.object
+  chart: PropTypes.objectOf({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    data: PropTypes.array
+  })
 };
 
 export default Chart;
