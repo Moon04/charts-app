@@ -33,7 +33,7 @@ export function handleFetchCharts() {
                     toast.error("Something wrong happened, please try again.");
                 } 
                 else if (error.request) {
-                  toast.error("Internet Connection Error! Try Again Later.");
+                  toast.error("Internet Connection Error! Try Again Later");
                 } 
                 else {
                   toast.error(error.message);
@@ -56,7 +56,7 @@ export function handleAddChart(chartData) {
           toast.error("Something wrong happened, please try again.");
         } 
         else if (error.request) {
-          toast.error("Internet Connection Error! Try Again Later.");
+          toast.error("Internet Connection Error! Try Again Later");
         } 
         else {
           toast.error(error.message);

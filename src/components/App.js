@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer } from 'react-toastify';
 import { connect } from "react-redux";
 import LoadingBar from "react-redux-loading";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -22,16 +22,16 @@ class App extends Component {
         <Fragment>
           <LoadingBar />
           <div className="app-container bg-light p-4">
-            <ToastContainer
-              position="top-right"
-              autoClose={2000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
+          <ToastContainer
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
             />
             <div>
               <Route path="/" exact component={InternalDashboard} />
@@ -44,4 +44,10 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+function mapStateToProps({ charts }) {
+  return {
+    loading: charts.length === 0
+  };
+}
+
+export default connect(mapStateToProps)(App);
