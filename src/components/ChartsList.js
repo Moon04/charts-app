@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 import Chart from "./Chart";
 
 const ChartsList = ({ charts }) => {
@@ -15,6 +16,10 @@ const ChartsList = ({ charts }) => {
       }
     </div>
   );
+};
+
+ChartsList.protoTypes = {
+  charts: PropTypes.array
 };
 
 function mapStateToProps({ charts }) {

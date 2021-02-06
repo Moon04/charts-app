@@ -3,12 +3,18 @@ import { ToastContainer } from 'react-toastify';
 import { connect } from "react-redux";
 import LoadingBar from "react-redux-loading";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 import InternalDashboard from "./InternalDashboard";
 import NewChartForm from "./NewChartForm";
 import { handleFetchCharts } from "../actions/charts";
 
 class App extends Component {
+
+  static propTypes  = {
+    loading: PropTypes.bool
+  };
+
   componentDidMount() {
     const { dispatch, loading } = this.props;
     if (loading === true) {

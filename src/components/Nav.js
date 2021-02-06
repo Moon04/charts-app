@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Navbar, NavbarBrand, Button } from "reactstrap";
 
 const Nav = ({handleAddChartBtn}) => {
@@ -8,6 +9,10 @@ const Nav = ({handleAddChartBtn}) => {
       <Button id="add-chart-btn" onClick={handleAddChartBtn}> + Add chart </Button>
     </Navbar>
   );
+};
+
+Nav.protoTypes = {
+  handleAddChartBtn: PropTypes.func
 };
 
 export default Nav;

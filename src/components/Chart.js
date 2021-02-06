@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 import { Card, CardBody, CardTitle } from "reactstrap";
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from "victory";
 
@@ -63,6 +64,10 @@ const Chart = ({ chart }) => {
       </Card>
     </div>
   );
+};
+
+Chart.protoTypes = {
+  chart: PropTypes.object
 };
 
 export default Chart;

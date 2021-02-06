@@ -88,9 +88,9 @@ class NewChartForm extends Component {
         title: chartTitle,
         data: chartData
     };
-    const { dispatch, id } = this.props;
+    const { dispatch } = this.props;
 
-    dispatch(handleAddChart({...chart}, id));
+    dispatch(handleAddChart({...chart}));
     this.props.history.push("/");
   };
 
