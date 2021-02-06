@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+#add-chart-btn, 
+#add-chart-btn:hover{
+  background-color: rgb(41,20,201);
+}
