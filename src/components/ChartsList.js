@@ -1,14 +1,24 @@
-import React from 'react';
-import Chart from './Chart';
+import React from "react";
+import { connect } from "react-redux";
+import Chart from "./Chart";
 
-const ChartsList = ()=>{
-    return(
-        <div className="row">
-            <Chart/>
-            <Chart/>
-            <Chart/>
-        </div>
-    );
+const ChartsList = ({ charts }) => {
+  return (
+    <div className="row mt-4">
+      {
+        charts !== null &&
+        charts?.map(chart=>(
+            <Chart key={chart.id} chartData={chart}/>
+        ))
+      }
+    </div>
+  );
 };
 
-export default ChartsList;
+function mapStateToProps({ charts }) {
+  return {
+    charts
+  };
+}
+
+export default connect(mapStateToProps)(ChartsList);

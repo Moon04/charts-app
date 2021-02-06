@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import charts from "./charts";
 import { loadingBarReducer } from "react-redux-loading";
+import charts from "./charts";
 
 export default combineReducers({
   charts,
-  loadingBar: loadingBarReducer,
+  loadingBar: loadingBarReducer
 });
