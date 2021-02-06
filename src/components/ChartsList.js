@@ -7,9 +7,7 @@ const ChartsList = ({ charts }) => {
     <div className="row mt-4">
       {
         charts !== null &&
-        charts?.map(chart=>(
-            <Chart key={chart.id} chartData={chart}/>
-        ))
+        charts?.map((chart) => <Chart key={chart.id} chart={chart} />)
       }
     </div>
   );
@@ -17,7 +15,7 @@ const ChartsList = ({ charts }) => {
 
 function mapStateToProps({ charts }) {
   return {
-    charts
+    charts,
   };
 }
 
