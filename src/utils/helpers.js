@@ -25,7 +25,7 @@ export const convertCSVToJson = (csvFile) => {
     const currentLine = lines[i].split(",");
 
     for (let j = 0; j < objHeaders.length; j++) {
-      obj[objHeaders[j]] = currentLine[j];
+      obj[objHeaders[j]] = toNumber(currentLine[j]);
     }
     result.push(obj);
   }
@@ -36,3 +36,8 @@ export const convertCSVToJson = (csvFile) => {
 
   return JSON.stringify(dataObj);
 };
+
+const toNumber = (value)=>{
+  const isValidNumber = value.length > 0 && value !== " " && !isNaN(value);
+  return isValidNumber? Number(value):value;
+}

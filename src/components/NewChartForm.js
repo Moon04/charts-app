@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import {
   Button,
   Form,
@@ -68,8 +69,8 @@ class NewChartForm extends Component {
     const chartDataFile = event.target.value;
     const fileType = this.state.fileType;
     if (fileType) {
-      const validFile = this.checkFileValidation(chartDataFile);
-      if (validFile) {
+      const isValidFile = this.checkFileValidation(chartDataFile);
+      if (isValidFile) {
         this.readFileData(event, fileType);
       }
     } else {
@@ -197,4 +198,4 @@ class NewChartForm extends Component {
   }
 }
 
-export default NewChartForm;
+export default connect()(NewChartForm);

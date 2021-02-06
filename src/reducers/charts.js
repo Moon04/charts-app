@@ -10,7 +10,7 @@ export default function charts(state = [], action) {
     case ADD_CHART:
       return [
         ...state,
-        ...action.chart
+        { ...action.chart }
       ];
     default:
       return state;

@@ -7,14 +7,14 @@ export const ADD_CHART = "ADD_CHART";
 function fetchCharts(charts) {
   return {
     type: FETCH_CHARTS,
-    charts: [...charts]
+    charts: [ ...charts ]
   };
 }
 
 function addChart(chart) {
   return {
     type: ADD_CHART,
-    chart
+    chart: { ...chart }
   };
 }
 
@@ -35,7 +35,7 @@ export function handleAddChart(chartData) {
     return saveChart({
       ...chartData,
     })
-      .then((chart) => dispatch(addChart(chart)))
+      .then((res) => dispatch(addChart(res.data)))
       .then(() => dispatch(hideLoading()));
   };
 }

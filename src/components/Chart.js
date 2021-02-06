@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardBody, CardTitle } from "reactstrap";
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from "victory";
 
 const Chart = ({ chart }) => {
-  const xAxis = Object.keys(chart.data[0])[0];
-  const yAxis = Object.keys(chart.data[0])[1];
+
+  const [xAxis, setXAxis] = useState("name");
+  const [yAxis, setYAxis] = useState("Count");
   const barStyle = {
     data: { fill: "#2a15c8" },
   };
+
+  useEffect(() => {
+    if (chart) {
+      setXAxis(Object.keys(chart.data[0])[0]);
+      setYAxis(Object.keys(chart.data[0])[1]);
+    }
+  }, [chart]);
 
   const formatDate = (date) => {
     const dateValues = date.split("-");
