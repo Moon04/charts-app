@@ -24,10 +24,8 @@ export function handleFetchCharts() {
   return (dispatch) => {
     dispatch(showLoading());
     return getAllCharts()
-            .then((res) => {
-              dispatch(hideLoading());
-              dispatch(fetchCharts([...res.data]));
-            })
+            .then((res) => dispatch(fetchCharts([...res.data])))
+            .then(()=> dispatch(hideLoading()))
             .catch((error)=>{
               dispatch(hideLoading());
                 if (error.response && error.response.status === 500) {
